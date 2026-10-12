@@ -1,2 +1,8 @@
 jdk:
-  - openjdk8
+  - openjdk25
+
+before_install:
+  - chmod +x ./gradlew
+
+install:
+  - ./gradlew clean publishToMavenLocal -x test -Pversion=$VERSION
